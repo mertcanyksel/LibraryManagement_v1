@@ -27,6 +27,8 @@ public:
     void returnBook();
     
     
+    void new_book();
+    
 //    void set_BookDetails(string title_b, string author_b, int ISBN_b, bool availability_b) {
 //        title = title_b;
 //        author = author_b;

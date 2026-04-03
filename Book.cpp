@@ -23,7 +23,7 @@ void Book::borrowBook(){
         cout << "Book already taken."<<endl;
     }
     char decision;
-    cout << "Are you sure borrow the book? (y/n)" <<endl; cin >> decision;
+    cout << "Are you sure borrow the book? (y/n) "; cin >> decision;
     
     if (decision=='y' or decision=='Y'){
         availability=false;
@@ -41,5 +41,36 @@ void Book::borrowBook(){
 
 
 void Book::returnBook(){
+    if (availability==true){
+        cout << "Book is already available in lib"<< endl;
+    }
+    char decision;
+    cout << "Are you sure return the book? (y/n)" ; cin >> decision;
+    
+    if (decision=='y' or decision=='Y'){
+        availability=true;
+        cout << "Returned successfully"<<endl;
+    }
+    
+    else if (decision=='n' or decision=='N'){
+        cout << "Return cancelled"<< endl;
+    }
+    
+    else {
+        cout << "You typed wrong character"<<endl;
+    }
     
 }
+
+
+
+
+void Book::new_book(){
+    cout << "Title of the new book: "; cin >> title;
+    cout << "Author of the new book: "; cin >>author;
+    cout << "ISBN of the new book: "; cin >>ISBN;
+    availability=true;
+    
+    
+}
+

@@ -47,12 +47,65 @@ int main(){
         cout << endl;
         
         
-        
-        cout << "Enter ISBN to borrow a book (or 0 to exit): "; cin >> inputISBN;
-        if(inputISBN==0){
+        int decisions;
+        cout << "==========================="<<endl;
+        cout << "Borrow       :1"<<endl;
+        cout << "Return       :2"<<endl;
+        cout << "Add new book :3"<<endl;
+        cout << "Exit         :0"<<endl;
+        cout << "Decision     :"; cin >> decisions;
+        if(decisions==0){
             cout << "Exiting system..."<<endl;
             break;
+            }
+            
+            
+            bool bookFound= false;
+            
+            if(decisions==1 or decisions==2){
+                cout << "Enter ISBN , 0 to exit: "; cin >> inputISBN;
+                if(inputISBN==0){
+                    cout << "Wrong ISBN"<<endl;
+                    //break;
+                }
+                for (int i=0; i< library.size();i++){
+                    
+                    if (inputISBN==library[i].ISBN){
+                        if (decisions==1){
+                            library[i].borrowBook();
+                            bookFound=false;
+                        }
+                        else{
+                            library[i].returnBook();
+                        }
+                        
+                    }
+                    
+                }
+            }
+            
+            
+        //**************************
+        // If the admin wants to add new book ;
+        
+    //    Book new_book;
+    //    new_book.setBookDetails("The Great Gatsby", "F. Scott Fitzgerald", 106, true);
+    //    library.push_back(new_book);
+    //    cout << library[5].title<<" 5. BOOK"<<endl;
+    //
+        //**************************
+        
+            if (!bookFound) {
+                cout << endl;
+                cout << "***************************" << endl;
+                cout << "You typed unavailable ISBN" << endl;
+                cout << "***************************" << endl;
+                cout << endl;
+            }
         }
+        
+        
+       
         
         
 //        // Searching the book by ISBN
@@ -65,24 +118,16 @@ int main(){
 //            }
 //        }
 
-        bool isISBNcorrect;
-        for (int i=0; i< library.size();i++){
+        
+    
+        
+        
+        
+        
+   
+        
             
-            if (inputISBN==library[i].ISBN){
-                isISBNcorrect=true;
-                library[i].borrowBook();
-                }
-            else if (inputISBN !=library[i].ISBN){
-                cout <<endl;
-                cout << "***************************"<<endl;
-                cout << "You typed unavailable ISBN"<<endl;
-                cout << "***************************"<<endl;
-                cout << endl;
-                break;
-                }
-            }
-            
-        }
+}
         
         
         
@@ -94,15 +139,7 @@ int main(){
     
     
     
-    //**************************
-    // If the admin wants to add new book ;
-    
-//    Book new_book;
-//    new_book.setBookDetails("The Great Gatsby", "F. Scott Fitzgerald", 106, true);
-//    library.push_back(new_book);
-//    cout << library[5].title<<" 5. BOOK"<<endl;
-//
-    //**************************
+
     
     //**********************
 //    Book book1;
@@ -115,6 +152,6 @@ int main(){
 //   // cout << "Test "<< ((book1.availability = true) ? "true":"false" )  << endl;
 //    cout << "Test " << book1.title << endl;
     //*********************
-}
+
 
 
