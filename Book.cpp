@@ -68,7 +68,6 @@ void Book::returnBook(){
 void Book::new_book(){
     cout << "Title of the new book: "; cin >> title;
     cout << "Author of the new book: "; cin >>author;
-    cout << "ISBN of the new book: "; cin >>ISBN;
     availability=true;
     
     
