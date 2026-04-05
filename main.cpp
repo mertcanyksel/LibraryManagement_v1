@@ -41,7 +41,6 @@ int main(){
         cout << "====== Library Books ======"<<endl;
         
         for (int i=0 ; i < library.size();i++){
-            libSize+=1;
             library[i].displayBookDetails();
             cout << "==========================="<<endl;
         }
