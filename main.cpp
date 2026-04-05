@@ -29,9 +29,9 @@ int main(){
     
     
     
-    cout << ((library[4].availability == true) ? "Yes,you can take it" : "No You can not") << endl;
-    cout << "Test" << endl;
-    cout << library[2].title<<endl;
+    // cout << ((library[4].availability == true) ? "Yes,you can take it" : "No You can not") << endl;
+    // cout << "Test" << endl;
+    // cout << library[2].title<<endl;
     
     
     
