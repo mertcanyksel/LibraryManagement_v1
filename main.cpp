@@ -4,46 +4,42 @@
 
 
 
+
 int main(){
-    //    vector<Book> library;
-    //
-    //    library[0].setBookDetails("The Great Gatsby", "F. Scott Fitzgerald", 101, true);
-    //    library[1].setBookDetails("1984", "George Orwell", 102, true);
-    //    library[2].setBookDetails("To Kill a Mockingbird", "Harper Lee", 103, true);
-    //    library[3].setBookDetails("Moby Dick", "Herman Melville", 104, true);
-    //    library[4].setBookDetails("Pride and Prejudice", "Jane Austen", 105, true);
-    //
-    //
-    //    cout << library[3].ISBN << endl;
     
     vector<Book> library(5);
     library[0].setBookDetails("The Great Gatsby", "F. Scott Fitzgerald", 101, true);
-    library[1].setBookDetails("1984", "George Orwell", 102, true);
-    library[2].setBookDetails("To Kill a Mockingbird", "Harper Lee", 103, true);
-    library[3].setBookDetails("Moby Dick", "Herman Melville", 104, true);
-    library[4].setBookDetails("Pride and Prejudice", "Jane Austen", 105, true);
+    library[1].setBookDetails("1984", "George Orwell", 104, true);
+    library[2].setBookDetails("To Kill a Mockingbird", "Harper Lee", 105, true);
+    library[3].setBookDetails("Moby Dick", "Herman Melville", 103, true);
+    library[4].setBookDetails("Pride and Prejudice", "Jane Austen", 102, true);
     
     
+
     
     
-    
-    
-    
-    // cout << ((library[4].availability == true) ? "Yes,you can take it" : "No You can not") << endl;
-    // cout << "Test" << endl;
-    // cout << library[2].title<<endl;
-    
-    
+
     
     
     int inputISBN;
     while (true){
         cout << "====== Library Books ======"<<endl;
-        
         for (int i=0 ; i < library.size();i++){
-            library[i].displayBookDetails();
-            cout << "==========================="<<endl;
+            for (int j=i+1;j<library.size();j++){
+                if(library[j].ISBN < library[i].ISBN){
+                    Book temp= library[j];
+                    library[j]=library[i];
+                    library[i]= temp;
+                }
+                
+            }
         }
+            
+        for (int i = 0; i < library.size(); i++){
+            library[i].displayBookDetails();
+            cout << "===========================" << endl;
+        }
+        
         cout << endl;
         
         
@@ -95,6 +91,7 @@ int main(){
             library[library.size()-1].ISBN=library[library.size()-2].ISBN+1;
             cout << "Book added successfully!" << endl;
         }
+        //unsigned long librarySize=library.size();
         
         
         
@@ -109,47 +106,6 @@ int main(){
     
     
 }
-    //**************************
-    // If the admin wants to add new book ;
-    
-//    Book new_book;
-//    new_book.setBookDetails("The Great Gatsby", "F. Scott Fitzgerald", 106, true);
-//    library.push_back(new_book);
-//    cout << library[5].title<<" 5. BOOK"<<endl;
-//
-    //**************************
-    
-    
-        
-        
-//        // Searching the book by ISBN
-//        for (int i=0 ; i< library.size() ;i++){
-//            if (inputISBN == library[i].ISBN){
-//                cout << "You are about to get a book"<< endl;
-//                library[i].availability=false;
-//                library[i].displayBookDetails();
-//                break;
-//            }
-//        }
-
-        
-            
-
-        
-        
-
-    
-    //**********************
-//    Book book1;
-//    book1.set_BookDetails("The Great Gatsby", "F. Scott Fitzgerald", 101, true);
-//    //    Book book1 {"The Great Gatsby", "F. Scott Fitzgerald", 101, true};
-//
-//
-//    Book book2 {"1984", "George Orwell", 102, true};
-//
-//   // cout << "Test "<< ((book1.availability = true) ? "true":"false" )  << endl;
-//    cout << "Test " << book1.title << endl;
-    //*********************
 
 
 
