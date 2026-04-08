@@ -1,3 +1,3 @@
-If you barrow a book , you can stil make a decision for borrowing same book , it shows already borrowed but it should not show borrow section
 
 Random ISBN figurations and use sort  algorithms
+Sorted algorithm added
