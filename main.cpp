@@ -3,22 +3,16 @@
 #include "Book.h"
 
 
-
-
 int main(){
     
     vector<Book> library(5);
-    library[0].setBookDetails("The Great Gatsby", "F. Scott Fitzgerald", 101, true);
-    library[1].setBookDetails("1984", "George Orwell", 104, true);
-    library[2].setBookDetails("To Kill a Mockingbird", "Harper Lee", 105, true);
-    library[3].setBookDetails("Moby Dick", "Herman Melville", 103, true);
-    library[4].setBookDetails("Pride and Prejudice", "Jane Austen", 102, true);
+    library[0].setBookDetails("The Great Gatsby", "F. Scott Fitzgerald", 104, true, "20/01/1999");
+    library[1].setBookDetails("1984", "George Orwell", 103, true,"02/11/2001");
+    library[2].setBookDetails("To Kill a Mockingbird", "Harper Lee", 102, true,"15/03/2015");
+    library[3].setBookDetails("Moby Dick", "Herman Melville", 101, true,"17/01/2015");
+    library[4].setBookDetails("Pride and Prejudice", "Jane Austen", 100, true,"20/01/1999");
     
     
-
-    
-    
-
     
     
     int inputISBN;
@@ -86,7 +80,7 @@ int main(){
             newBook.new_book();         // ask user for details
             
             library.push_back(newBook); // add to library
-            cout << library.size()<< endl;
+            cout <<"Total book --> " <<library.size()<< endl;
             
             library[library.size()-1].ISBN=library[library.size()-2].ISBN+1;
             cout << "Book added successfully!" << endl;
@@ -95,13 +89,13 @@ int main(){
         
         
         
-        if (!bookFound) {
-            cout << endl;
-            cout << "***************************" << endl;
-            cout << "You typed unavailable ISBN" << endl;
-            cout << "***************************" << endl;
-            cout << endl;
-        }
+//        if (!bookFound) {
+//            cout << endl;
+//            cout << "***************************" << endl;
+//            cout << "You typed unavailable ISBN" << endl;
+//            cout << "***************************" << endl;
+//            cout << endl;
+//        }
     }
     
     

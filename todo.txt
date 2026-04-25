@@ -1,3 +1,2 @@
 
-Random ISBN figurations and use sort  algorithms
-Sorted algorithm added
+echo "Add random ISBN and show minutes info
